@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Slice of Fire. Find our location, opening hours, and send us a message.">
+    <title>Contact Us | Slice of Fire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="loader-wrapper"><div class="pizza-loader"></div></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SLICE<span>OF</span>FIRE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order-tracking.html">Track Order</a></li>
+                </ul>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5" style="margin-top: 80px;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="section-title reveal">Get in Touch</h1>
+                <p class="section-subtitle reveal">We'd love to hear from you</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Contact Info -->
+                <div class="col-lg-4 reveal">
+                    <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+                        <h5 class="mb-4">Contact Information</h5>
+                        <p><i class="fas fa-map-marker-alt me-3 text-primary"></i>123 Fire Street, Pizza City, PC 12345</p>
+                        <p><i class="fas fa-phone me-3 text-primary"></i>(555) 123-4567</p>
+                        <p><i class="fas fa-envelope me-3 text-primary"></i>hello@sliceoffire.com</p>
+                        <hr>
+                        <h5 class="mb-3">Opening Hours</h5>
+                        <p class="mb-1"><strong>Mon - Thu:</strong> 11:00 AM - 10:00 PM</p>
+                        <p class="mb-1"><strong>Fri - Sat:</strong> 11:00 AM - 12:00 AM</p>
+                        <p><strong>Sunday:</strong> 12:00 PM - 9:00 PM</p>
+                        <hr>
+                        <h5 class="mb-3">Follow Us</h5>
+                        <a href="#" class="social-icon bg-primary text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon bg-primary text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon bg-primary text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-lg-8 reveal">
+                    <div class="bg-white p-4 rounded-4 shadow-sm">
+                        <h5 class="mb-4">Send Us a Message</h5>
+                        <form id="contact-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="contact-name" class="form-label">Name *</label>
+                                    <input type="text" class="form-control" id="contact-name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="contact-email" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="contact-subject" class="form-label">Subject *</label>
+                                    <input type="text" class="form-control" id="contact-subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="contact-message" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="contact-message" rows="5" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location Map -->
+            <div class="mt-5 reveal">
+                <h2 class="section-title mb-4">Find Us</h2>
+                <div class="rounded-4 overflow-hidden shadow-sm">
+                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.1276%2C51.5074%2C-0.1276%2C51.5074&layer=mapnik" 
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="mt-5">
+                <h2 class="section-title mb-4 reveal">Frequently Asked Questions</h2>
+                <div class="accordion reveal" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                Do you offer gluten-free options?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">Yes! We offer a gluten-free crust option for all our pizzas. Just select "Gluten-Free" when customizing your pizza. Please note that our kitchen handles gluten, so there is a risk of cross-contamination.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                How long does delivery take?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">Our average delivery time is 30-35 minutes. You can track your order in real-time on our <a href="order-tracking.html">Order Tracking</a> page.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Can I customize my pizza?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">Absolutely! Visit our <a href="pizza-details.html">Pizza Details</a> page to choose your size, crust, and add extra toppings. You can also leave special instructions at checkout.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                Do you cater for events?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">Yes, we offer catering for events large and small. Please contact us at events@sliceoffire.com for a custom quote.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4"><h5 class="navbar-brand">SLICE<span>OF</span>FIRE</h5><p>Premium artisan pizzas crafted with fire and passion.</p></div>
+                <div class="col-lg-2 col-md-4"><h5>Quick Links</h5><a href="menu.html">Menu</a><a href="offers.html">Offers</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+                <div class="col-lg-2 col-md-4"><h5>Services</h5><a href="order-tracking.html">Track Order</a><a href="cart.html">View Cart</a><a href="checkout.html">Checkout</a></div>
+                <div class="col-lg-4 col-md-4"><h5>Contact Us</h5><p><i class="fas fa-phone me-2"></i> (555) 123-4567</p><p><i class="fas fa-envelope me-2"></i> hello@sliceoffire.com</p></div>
+            </div>
+            <hr class="mt-4 border-secondary">
+            <p class="text-center mb-0 small">© 2025 Slice of Fire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you within 24 hours.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>

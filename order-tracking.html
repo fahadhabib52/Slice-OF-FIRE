@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track your Slice of Fire order in real-time. See when your pizza is being prepared, baked, and delivered.">
+    <title>Track Order | Slice of Fire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="loader-wrapper"><div class="pizza-loader"></div></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SLICE<span>OF</span>FIRE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="order-tracking.html">Track Order</a></li>
+                </ul>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5" style="margin-top: 80px;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="section-title">Track Your Order</h1>
+                <p class="section-subtitle">Follow your pizza from our oven to your door</p>
+            </div>
+
+            <!-- No Order State -->
+            <div id="no-order" class="text-center py-5 d-none">
+                <i class="fas fa-box-open fa-5x text-muted mb-4"></i>
+                <h3>No active order found</h3>
+                <p class="text-muted mb-4">Place an order to track it here.</p>
+                <a href="menu.html" class="btn btn-primary btn-lg">Order Now</a>
+            </div>
+
+            <!-- Order Tracking -->
+            <div id="tracking-content" class="d-none">
+                <!-- Order Info Card -->
+                <div class="bg-white p-4 rounded-4 shadow-sm mb-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="mb-2">Order <span class="text-primary" id="order-number"></span></h5>
+                            <p class="text-muted mb-1"><i class="fas fa-user me-2"></i><span id="order-customer"></span></p>
+                            <p class="text-muted mb-1"><i class="fas fa-map-marker-alt me-2"></i><span id="order-address"></span></p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <p class="text-muted mb-1"><i class="fas fa-clock me-2"></i>Estimated Delivery</p>
+                            <h4 class="text-primary" id="order-eta"></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="tracking-timeline">
+                    <div class="tracking-progress-bar" id="progress-bar"></div>
+                    <div class="tracking-step" data-step="0">
+                        <div class="step-icon"><i class="fas fa-check"></i></div>
+                        <div class="step-label">Order Confirmed</div>
+                    </div>
+                    <div class="tracking-step" data-step="1">
+                        <div class="step-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="step-label">Preparing</div>
+                    </div>
+                    <div class="tracking-step" data-step="2">
+                        <div class="step-icon"><i class="fas fa-fire"></i></div>
+                        <div class="step-label">Baking</div>
+                    </div>
+                    <div class="tracking-step" data-step="3">
+                        <div class="step-icon"><i class="fas fa-truck"></i></div>
+                        <div class="step-label">Out for Delivery</div>
+                    </div>
+                    <div class="tracking-step" data-step="4">
+                        <div class="step-icon"><i class="fas fa-home"></i></div>
+                        <div class="step-label">Delivered</div>
+                    </div>
+                </div>
+
+                <!-- Order Items -->
+                <div class="bg-white p-4 rounded-4 shadow-sm mt-4">
+                    <h5 class="mb-3">Order Details</h5>
+                    <div id="order-items-list"></div>
+                    <hr>
+                    <div class="d-flex justify-content-between"><span>Total Paid</span><strong id="order-total"></strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4"><h5 class="navbar-brand">SLICE<span>OF</span>FIRE</h5><p>Premium artisan pizzas crafted with fire and passion.</p></div>
+                <div class="col-lg-2 col-md-4"><h5>Quick Links</h5><a href="menu.html">Menu</a><a href="offers.html">Offers</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+                <div class="col-lg-2 col-md-4"><h5>Services</h5><a href="order-tracking.html">Track Order</a><a href="cart.html">View Cart</a><a href="checkout.html">Checkout</a></div>
+                <div class="col-lg-4 col-md-4"><h5>Contact Us</h5><p><i class="fas fa-phone me-2"></i> (555) 123-4567</p><p><i class="fas fa-envelope me-2"></i> hello@sliceoffire.com</p></div>
+            </div>
+            <hr class="mt-4 border-secondary">
+            <p class="text-center mb-0 small">© 2025 Slice of Fire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

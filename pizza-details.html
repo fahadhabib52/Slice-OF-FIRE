@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Customize your pizza at Slice of Fire. Choose size, crust, and extra toppings.">
+    <title>Pizza Details | Slice of Fire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="loader-wrapper"><div class="pizza-loader"></div></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SLICE<span>OF</span>FIRE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order-tracking.html">Track Order</a></li>
+                </ul>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Image Gallery -->
+                <div class="col-lg-6">
+                    <div class="sticky-top" style="top: 100px;">
+                        <img id="main-image" src="" class="img-fluid rounded-4 shadow-lg w-100" alt="Pizza" style="max-height: 500px; object-fit: cover;">
+                        <div class="row g-2 mt-2" id="thumbnail-container">
+                            <!-- Thumbnails -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="col-lg-6">
+                    <h1 id="detail-name" class="section-title" style="font-size: 2.5rem;"></h1>
+                    <div class="text-warning mb-2" id="detail-rating"></div>
+                    <p id="detail-desc" class="text-muted fs-5"></p>
+
+                    <hr>
+
+                    <!-- Size Selection -->
+                    <h5>Size</h5>
+                    <div class="btn-group w-100 mb-4" role="group" id="size-group">
+                        <input type="radio" class="btn-check" name="size" id="size-small" value="Small">
+                        <label class="btn btn-outline-primary" for="size-small">Small</label>
+                        <input type="radio" class="btn-check" name="size" id="size-medium" value="Medium" checked>
+                        <label class="btn btn-outline-primary" for="size-medium">Medium</label>
+                        <input type="radio" class="btn-check" name="size" id="size-large" value="Large">
+                        <label class="btn btn-outline-primary" for="size-large">Large</label>
+                    </div>
+
+                    <!-- Crust Selection -->
+                    <h5>Crust</h5>
+                    <div class="btn-group w-100 mb-4" role="group" id="crust-group">
+                        <input type="radio" class="btn-check" name="crust" id="crust-classic" value="Classic" checked>
+                        <label class="btn btn-outline-primary" for="crust-classic">Classic</label>
+                        <input type="radio" class="btn-check" name="crust" id="crust-thin" value="Thin">
+                        <label class="btn btn-outline-primary" for="crust-thin">Thin</label>
+                        <input type="radio" class="btn-check" name="crust" id="crust-stuffed" value="Stuffed">
+                        <label class="btn btn-outline-primary" for="crust-stuffed">Stuffed (+$3)</label>
+                    </div>
+
+                    <!-- Extra Toppings -->
+                    <h5>Extra Toppings</h5>
+                    <div class="row g-2 mb-4">
+                        <div class="col-6"><div class="form-check"><input class="form-check-input topping-check" type="checkbox" value="Extra Cheese" data-price="2.00" id="top-cheese"><label class="form-check-label" for="top-cheese">Extra Cheese (+$2)</label></div></div>
+                        <div class="col-6"><div class="form-check"><input class="form-check-input topping-check" type="checkbox" value="Pepperoni" data-price="2.50" id="top-pepperoni"><label class="form-check-label" for="top-pepperoni">Pepperoni (+$2.50)</label></div></div>
+                        <div class="col-6"><div class="form-check"><input class="form-check-input topping-check" type="checkbox" value="Mushrooms" data-price="1.50" id="top-mushrooms"><label class="form-check-label" for="top-mushrooms">Mushrooms (+$1.50)</label></div></div>
+                        <div class="col-6"><div class="form-check"><input class="form-check-input topping-check" type="checkbox" value="Bacon" data-price="3.00" id="top-bacon"><label class="form-check-label" for="top-bacon">Bacon (+$3)</label></div></div>
+                        <div class="col-6"><div class="form-check"><input class="form-check-input topping-check" type="checkbox" value="Jalapeños" data-price="1.00" id="top-jalapenos"><label class="form-check-label" for="top-jalapenos">Jalapeños (+$1)</label></div></div>
+                        <div class="col-6"><div class="form-check"><input class="form-check-input topping-check" type="checkbox" value="Olives" data-price="1.50" id="top-olives"><label class="form-check-label" for="top-olives">Olives (+$1.50)</label></div></div>
+                    </div>
+
+                    <!-- Quantity & Price -->
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div class="d-flex align-items-center gap-3">
+                            <h5 class="mb-0">Quantity:</h5>
+                            <button class="btn btn-outline-secondary btn-sm" id="qty-minus"><i class="fas fa-minus"></i></button>
+                            <span id="quantity-display" class="fs-4 fw-bold">1</span>
+                            <button class="btn btn-outline-secondary btn-sm" id="qty-plus"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="text-end">
+                            <p class="text-muted mb-0">Total Price</p>
+                            <h2 class="text-primary fw-bold" id="total-price">$0.00</h2>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-lg w-100" id="add-to-cart-detail">
+                        <i class="fas fa-shopping-bag me-2"></i>Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Related Pizzas -->
+            <div class="mt-5 pt-4">
+                <h2 class="section-title mb-4">You Might Also Like</h2>
+                <div class="row g-4" id="related-pizzas">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="navbar-brand">SLICE<span>OF</span>FIRE</h5>
+                    <p>Premium artisan pizzas crafted with fire and passion.</p>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>Quick Links</h5>
+                    <a href="menu.html">Menu</a>
+                    <a href="offers.html">Offers</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>Services</h5>
+                    <a href="order-tracking.html">Track Order</a>
+                    <a href="cart.html">View Cart</a>
+                    <a href="checkout.html">Checkout</a>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="fas fa-phone me-2"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope me-2"></i> hello@sliceoffire.com</p>
+                </div>
+            </div>
+            <hr class="mt-4 border-secondary">
+            <p class="text-center mb-0 small">© 2025 Slice of Fire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Get pizza ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const pizzaId = parseInt(urlParams.get('id')) || 1;
+
+        // We need the menuItems array - let's re-declare it here for this page
+        // In a real project, you'd load it from a shared module or localStorage
+        const allPizzas = [
+            { id: 1, name: "Margherita Supreme", desc: "San Marzano tomatoes, fresh mozzarella, basil, olive oil", price: 14.99, img: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&q=80", rating: 5, category: "vegetarian" },
+            { id: 2, name: "Truffle Mushroom", desc: "Wild mushrooms, truffle oil, fontina cheese, thyme", price: 19.99, img: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=800&q=80", rating: 5, category: "vegetarian" },
+            { id: 5, name: "BBQ Chicken Ranch", desc: "Grilled chicken, BBQ sauce, red onions, ranch drizzle", price: 17.99, img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80", rating: 4.5, category: "chicken" },
+            { id: 9, name: "Pepperoni Inferno", desc: "Double pepperoni, spicy tomato sauce, mozzarella", price: 16.99, img: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&q=80", rating: 4.5, category: "beef" }
+        ];
+
+        const pizza = allPizzas.find(p => p.id === pizzaId) || allPizzas[0];
+
+        // Base price
+        let basePrice = pizza.price;
+        let quantity = 1;
+
+        // Set page content
+        document.getElementById('detail-name').textContent = pizza.name;
+        document.getElementById('detail-desc').textContent = pizza.desc;
+        document.getElementById('detail-rating').innerHTML = '★'.repeat(Math.floor(pizza.rating)) + (pizza.rating % 1 ? '☆' : '');
+        document.getElementById('main-image').src = pizza.img;
+        document.title = `${pizza.name} | Slice of Fire`;
+
+        // Generate thumbnails (using different crops of the same image for demo)
+        const thumbContainer = document.getElementById('thumbnail-container');
+        const thumbUrls = [
+            pizza.img,
+            pizza.img.replace('w=800', 'w=400'),
+            pizza.img.replace('w=800', 'w=600')
+        ];
+        thumbUrls.forEach((url, i) => {
+            thumbContainer.innerHTML += `
+                <div class="col-4">
+                    <img src="${url}" class="img-fluid rounded-2 thumbnail-img ${i === 0 ? 'border border-primary' : ''}" 
+                         style="height: 80px; object-fit: cover; cursor: pointer;" 
+                         onclick="document.getElementById('main-image').src='${pizza.img}'; document.querySelectorAll('.thumbnail-img').forEach(t => t.classList.remove('border-primary')); this.classList.add('border-primary');">
+                </div>
+            `;
+        });
+
+        // Calculate price
+        function calculatePrice() {
+            let sizeMultiplier = 1;
+            const size = document.querySelector('input[name="size"]:checked').value;
+            if (size === 'Small') sizeMultiplier = 0.85;
+            if (size === 'Large') sizeMultiplier = 1.25;
+
+            let crustExtra = 0;
+            const crust = document.querySelector('input[name="crust"]:checked').value;
+            if (crust === 'Stuffed') crustExtra = 3.00;
+
+            let toppingsTotal = 0;
+            document.querySelectorAll('.topping-check:checked').forEach(cb => {
+                toppingsTotal += parseFloat(cb.dataset.price);
+            });
+
+            const unitPrice = (basePrice * sizeMultiplier) + crustExtra + toppingsTotal;
+            const total = unitPrice * quantity;
+            document.getElementById('total-price').textContent = `$${total.toFixed(2)}`;
+            return { unitPrice, total, size, crust, toppings: Array.from(document.querySelectorAll('.topping-check:checked')).map(cb => cb.value) };
+        }
+
+        // Event listeners for price calculation
+        document.querySelectorAll('input[name="size"], input[name="crust"], .topping-check').forEach(el => {
+            el.addEventListener('change', calculatePrice);
+        });
+
+        // Quantity controls
+        document.getElementById('qty-minus').addEventListener('click', () => {
+            if (quantity > 1) { quantity--; document.getElementById('quantity-display').textContent = quantity; calculatePrice(); }
+        });
+        document.getElementById('qty-plus').addEventListener('click', () => {
+            quantity++; document.getElementById('quantity-display').textContent = quantity; calculatePrice();
+        });
+
+        // Add to Cart
+        document.getElementById('add-to-cart-detail').addEventListener('click', () => {
+            const { unitPrice, size, crust, toppings } = calculatePrice();
+            AppState.cart.push({
+                id: pizza.id,
+                name: pizza.name,
+                img: pizza.img,
+                price: unitPrice,
+                quantity: quantity,
+                size,
+                crust,
+                toppings,
+                category: pizza.category
+            });
+            AppState.saveCart();
+
+            const btn = document.getElementById('add-to-cart-detail');
+            btn.innerHTML = '<i class="fas fa-check me-2"></i>Added to Cart!';
+            btn.classList.add('btn-success');
+            btn.classList.remove('btn-primary');
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-shopping-bag me-2"></i>Add to Cart';
+                btn.classList.add('btn-primary');
+                btn.classList.remove('btn-success');
+            }, 1500);
+        });
+
+        // Related pizzas
+        const relatedContainer = document.getElementById('related-pizzas');
+        allPizzas.filter(p => p.id !== pizza.id).slice(0, 3).forEach(p => {
+            relatedContainer.innerHTML += `
+                <div class="col-md-4 reveal">
+                    <div class="product-card">
+                        <div class="card-img-wrapper" style="height: 180px;">
+                            <img src="${p.img}" alt="${p.name}" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">${p.name}</h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$${p.price.toFixed(2)}</span>
+                                <a href="pizza-details.html?id=${p.id}" class="btn btn-sm btn-outline-primary rounded-pill">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Initial price calculation
+        calculatePrice();
+        setTimeout(revealElements, 100);
+    </script>
+</body>
+</html>
